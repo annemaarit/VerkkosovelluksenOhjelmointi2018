@@ -1,0 +1,30 @@
+/* 	file: ot1b.css
+	desc: Painikkeiden ja otsikkojen tyylimääritykset
+	date: 28.1.2018
+	auth: Maarit Parkkonen */
+	
+button {
+	padding: 20px;
+	background-color: red;
+	color: white;
+	font-size: 20px;
+	 border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;	
+	 box-shadow: 5px 5px 5px #888888;	
+}
+
+.perusotsikko .alaotsikko{
+	font-family: Arial;
+}
+
+.perusotsikko{
+	font-size: 30px;
+	margin-left: 20px;	
+}
+
+.alaotsikko{
+	font-size: 20px;
+	margin-left: 50px;
+}
+

@@ -1,0 +1,44 @@
+/* 	file: ot3c.css
+	desc: tiedoston ot3c.html tyylimääritykset,
+		  taulukon, hakutietojen ja haun tuloksen muotoiluja
+	date: 22.2.2018
+	auth: Maarit Parkkonen */
+
+	table {
+		font-family:Arial;
+		border-collapse: collapse;
+	}		
+	table, th, td {
+		border:1px solid black;
+	}
+	th, td {
+		border-bottom-style: double;
+		border-bottom-width: 4px;
+	}
+	th, label, #tulos{
+		font-size:18px;
+	}
+	td{
+		min-width:60px;
+	}
+	label, button, input {
+		display: block;
+		margin: 5px;
+	}
+	button{
+		padding: 10px;
+	}	
+	.teksti{
+		padding:0px 20px 0px 5px;
+		}
+	.numero{
+		text-align:center;
+	}	
+	#tulos{
+		margin: 10px 5px;
+	}
+	#tulos span{
+		font-weight: bold;
+	}	
+
+

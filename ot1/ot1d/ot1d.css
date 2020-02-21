@@ -1,0 +1,37 @@
+/* 	file: ot1d.css
+	desc: valuuttalaskurin tyylimääritykset
+	date: 29.1.2018
+	auth: Maarit Parkkonen */
+	
+fieldset {
+    font-size: 16px;
+    width: 400px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-color: #4A2885;
+    background-color: #f6e4f8;
+	font-family: Arial;
+}
+
+legend {
+    font-size: 20px;
+    color: #5c205c;
+}
+
+button {
+	display: block;
+    padding: 10px;
+    width: 200px;
+	background-color: blue;
+	color: white;
+	margin-top: 10px;
+}
+
+label {
+	width: 100px;
+	float: left;
+}
+
+label, input {
+	margin-bottom: 5px;
+}

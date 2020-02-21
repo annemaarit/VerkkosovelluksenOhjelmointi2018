@@ -1,0 +1,18 @@
+/* 	file: ot5b.css
+	desc: tiedoston ot5b (taxilaskuri) tyylimääritykset,
+		  lomakkeen elementtien muotoiluja
+	date: 9.3.2018
+	auth: Maarit Parkkonen */
+
+input {
+	max-width:600px;
+}
+
+select {
+	max-width:300px;
+}
+
+button {
+	width: 140px;
+	margin-bottom:10px;
+}

@@ -1,0 +1,78 @@
+/* 	file: ot2.css
+	desc: Ostoslistan tyylitiedosto
+	date: 11.2.2018
+	auth: Maarit Parkkonen */
+
+body{
+	font-family: Futura, sans-serif;
+	margin:5px;
+	padding:0px;
+}
+
+/*sovelluksen tausta*/	
+#sovellus{
+	width:100%;
+	max-width:480px;
+	margin:auto;
+	padding-bottom: 20px;
+	padding-top: 10px;
+	background-color:#e01c34;
+	text-align: center;		
+}
+
+h1 {
+	font-size:30px;
+	color: white;
+}
+
+input, button{
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;	
+	box-shadow: 3px 3px 3px #000000;	
+	padding:10px;
+}
+
+button {
+	color: white;
+	font-weight: bold;
+	background-color: #44b09e;
+}
+
+button, h1{
+	text-shadow: 2px 2px 5px #111111;	
+}
+
+input {
+	color: #5e2b1b;
+	width:200px;
+	font-size: 16px;	
+}
+
+/*tuotelista*/
+ul {
+	margin:20px 0px 20px 0px;
+	padding:0px;
+	background-color:#e0d2c7;
+	color: #5e2b1b; 
+
+}
+
+li {
+	text-align: left;	
+	padding: 10px 0px 10px 0px;
+	border-bottom: 2px solid #44b09e;
+	list-style-type: none;
+	text-indent:20px;
+	font-weight: bold;
+	font-size:16px;
+}
+
+
+/*värit: http://colorpalettes.net/color-palette-3682/
+ kitti:#e0d2c7
+ harmaa:#acabb0;
+ aqua:#44b09e
+ punainen:#e01c34
+ ruskea:#5e2b1b*/
+

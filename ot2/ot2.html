@@ -1,0 +1,31 @@
+<!DOCTYPE html> 
+<html> 
+<!--file: ot2.html
+    desc: Ostoslista, jolle voi lisätä tai
+	      josta voi poistaa tuotteita
+    date: 11.2.2018
+    auth: Maarit Parkkonen-->
+	
+ <head>
+	<title> ot2 </title> 
+	<meta charset="utf-8"/> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--tyylitiedoston sijainti-->
+	<link rel="stylesheet" href="ot2.css">
+	<!--jquery kirjaston lataus-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ </head> 
+
+ <body> 
+	<div id="sovellus">
+		<h1>Ostoslista</h1>
+		<input type="text" id="tuote" placeholder="Kirjoita..">		<!--tuotteen syöttökenttä-->
+		<button id="lisaa">Lisää</button>							<!--lisää painike-->
+		<ul id="lista">												<!--tuotelistan runko-->
+		</ul>
+	</div>
+	<!--oman skriptitiedoston sijainti -->		
+	<script src="ot2.js"></script> 
+ </body>
+
+</html>

@@ -1,0 +1,12 @@
+[
+	{"Numero":3,"Elokuva":"Kummisetä","Vuosi":1972,"Kategoria":"rikos","Ohjaaja":"Francis Coppola"}, 
+	{"Numero":24,"Elokuva":"Imperiumin vastaisku","Vuosi":1980,"Kategoria":"scifi","Ohjaaja":"Irvin Kershner"},
+	{"Numero":56,"Elokuva":"Yön ritari","Ohjaaja":"Christopher Nolan","Vuosi":2008,"Kategoria":"jännitys"},
+	{"Numero":103,"Elokuva":"Rita Hayworth – avain pakoon","Vuosi":1994,"Kategoria":"jännitys","Ohjaaja":"Frank Darabont"},
+	{"Numero":105,"Elokuva":"Pulp Fiction – Tarinoita väkivallasta","Vuosi":1994,"Kategoria":"rikos","Ohjaaja":"Quentin Tarantino"},
+	{"Numero":166,"Elokuva":"Mafiaveljet","Vuosi":1980,"Kategoria":"rikos","Ohjaaja":"Martin Scorsese"}, 
+	{"Numero":207,"Elokuva":"Kadonneen aarteen metsästäjät","Vuosi":1981,"Kategoria":"seikkailu","Ohjaaja":"Steven Spielberg"}, 
+	{"Numero":238,"Elokuva":"Tappajahai","Vuosi":1975,"Kategoria":"kauhu","Ohjaaja":"Steven Spielberg"}, 
+	{"Numero":319,"Elokuva":"Tähtien sota","Vuosi":1977,"Kategoria":"scifi","Ohjaaja":"George Lucas"}, 
+	{"Numero":410,"Elokuva":"Taru sormusten herrasta: Sormuksen ritarit","Vuosi":1972,"Kategoria":"fantasia","Ohjaaja":"Peter Jackson"} 
+]

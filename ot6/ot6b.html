@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--file: ot6b.html
+    desc: Autonvuokraus -sovellus:
+			-lomake, jolla kysytään vuokrauksen:
+					*alku- ja palautuspäivämäärät
+					*vuokraajan etu- ja sukunimi
+					*vuokraajan sähköpostiosoite ja puhelinnumero
+			-näyttää tietojen yhteenvedon sekä vuokrahinnan modaali -ikkunassa
+			-tulostaa lomakkeen tiedot consoliin JSON -muodossa
+    date: 12.3.2018
+    auth: Maarit Parkkonen-->
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!--järjestyksellä on merkitystä, tämä ensin!!!-->	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="css/bootstrap-datepicker.min.css" rel="stylesheet" media="screen">
+	<link rel="stylesheet" href="ot6b.css">	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
+	<script type="text/javascript" src="js/bootstrap-datepicker.min.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="locales/bootstrap-datepicker.fi.min.js" charset="UTF-8"></script>
+    <title>ot6b</title>
+  </head>
+  
+  <body>  
+  <div class="container">
+	
+  <!--bootstrapin vaakasuuntainen lomake-->	
+  <form class="form-horizontal">
+
+	<h3 class="text-info">Kolarin Autovuokraamo Oy <br><small>Skoda superb 120e/vrk</small></h3>
+	
+    <!--päiväyselementit--------------------------------------------------------->
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="alku">Alkupäivämäärä</label><!--nykyistä päivää edeltävät päivät ei valittavissa-->
+      <div class="col-sm-10 controls input-append date paivyri" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" data-date-start-date="0d">
+			<input id="alku" size="25" type="text" value="" readonly>
+	        <span class="add-on"><i class="icon-remove"></i></span>
+			<span class="add-on"><i class="icon-th"></i></span>	
+			<input type="hidden" id="dtp_input2" value="" /><br/>			
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="alku">Palautuspäivämäärä</label><!--nykyistä päivää edeltävät päivät ei valittavissa-->
+      <div class="col-sm-10 controls input-append date paivyri" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" data-date-start-date="0d">
+			<input id="loppu" size="25" type="text" value="" readonly>
+	        <span class="add-on"><i class="icon-remove"></i></span>
+			<span class="add-on"><i class="icon-th"></i></span>		
+			<input type="hidden" id="dtp_input2" value="" /><br/>			
+      </div>
+    </div>
+	
+	<!--tekstisyötteet--------------------------------------------------------->
+	<div class="form-group">
+	  <label class="control-label col-sm-2" for="etunimi">Etunimesi</label>
+		<div class="col-sm-10">
+		<input type="text" class="form-control" id="etunimi" name="etunimi" data-toggle="tooltip" data-placement="bottom" title="Kirjoita etunimesi">
+      </div>
+    </div>
+	
+	<div class="form-group">
+	  <label class="control-label col-sm-2" for="sukunimi">Sukunimesi</label>
+		<div class="col-sm-10">
+        <input type="text" class="form-control" id="sukunimi" name="sukunimi" data-toggle="tooltip" data-placement="bottom" title="Kirjoita sukunimesi">
+      </div>
+    </div>	
+
+	<div class="form-group">
+	  <label class="control-label col-sm-2" for="sposti">Sähköpostiosoitteesi</label>
+		<div class="col-sm-10">
+        <input type="text" class="form-control" id="sposti" name="sposti" data-toggle="tooltip" data-placement="bottom" title="Kirjoita sähköpostiosoitteesi">
+      </div>
+    </div>	
+	
+	<div class="form-group">
+	  <label class="control-label col-sm-2" for="puhnro">Puhelinnumerosi</label>
+		<div class="col-sm-10">
+        <input type="text" class="form-control" id="puhnro" name="puhnro" data-toggle="tooltip"  data-placement="bottom" title="Kirjoita puhelinnumerosi">
+      </div>
+    </div>	
+	
+	<!--modaalin avauspainike-------------------------------------------------------------->
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+		
+        <button type="button" id="vahvistan" class="btn btn-success">Vahvistan varaukseni</button>
+	  </div>
+    </div>
+
+	
+   <!--virheilmoitusten tulostusalue------------------------------------------------------------------------>
+  <div class="row">
+    <div class="col-sm-offset-2 col-sm-10">
+		<div id="tulostus"></div>
+	<div>	
+  </div>
+ 	
+   <!--modaali------------------------------------------------------------------------------>
+	<div class="modal fade" id="vahvistusIkkuna"  role="dialog">
+	  <div class="modal-dialog">
+		<!-- Modaaliin sisältö-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<!--modaalin ylänurkan suljerasti-->
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Yhteenveto varauksestasi</h4>
+			</div>
+			<!--modaalin tulostusalue-->
+			<div class="modal-body" id="modaaliTulostus"></div>
+			<!--modaalin painikkeet-->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-success" id="hyvaksyn" data-dismiss="modal">Hyväksyn</button>
+				<button type="button" class="btn btn-primary" id="muutan" data-dismiss="modal">Muutan tietoja</button>
+				<button type="button" class="btn btn-warning" id="peruutan" data-dismiss="modal">Peruutan</button>
+			</div>
+		</div>
+	  </div>
+	</div>
+	
+  </div>  <!--container-->
+  
+  <script src="ot6b.js"></script>  
+  </body>
+</html>

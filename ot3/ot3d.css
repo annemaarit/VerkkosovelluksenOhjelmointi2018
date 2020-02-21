@@ -1,0 +1,22 @@
+/* 	file: ot3d.css
+	desc: tiedoston ot3d.html tyylimääritykset,
+		  taulukon muotoiluja
+	date: 23.2.2018
+	auth: Maarit Parkkonen */
+
+	table {
+		font-family:Arial;
+		border-collapse: collapse;
+	}	
+	th, td {
+		border:1px solid black;
+		padding: 5px 10px;
+		min-width:60px;
+	}	
+	th {
+		text-align: left;
+    }
+	.vari{
+		background-color:#cfe4dd ;
+		}
+

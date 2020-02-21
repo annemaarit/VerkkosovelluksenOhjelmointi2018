@@ -1,0 +1,29 @@
+/* 	file: ot3ab.css
+	desc: tiedostojen ot3a.html ja ot3b.html tyylimääritykset,
+		  taulukon muotoiluja
+	date: 21.2.2018
+	auth: Maarit Parkkonen */
+
+	table {
+		font-family:Arial;
+		border-collapse: collapse;
+	}		
+	table, th, td {
+		border:1px solid black;
+	}
+	th, td {
+		border-bottom-style: double;
+		border-bottom-width: 4px;
+	}
+	th{
+		font-size:18px;
+	}
+	td{
+		min-width:60px;
+	}
+	.teksti{
+		padding:0px 20px 0px 5px;
+		}
+	.numero{
+		text-align:center;
+	}

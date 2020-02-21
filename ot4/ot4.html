@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--file: ot4.html
+    desc: Lintobongari -sovellus:
+			-uusien havaintojen lisäys
+			-lintulajikohtaisten havaintojen haku
+			-kaikkien havaintojen näyttäminen
+			-yksittäisen havainnon poisto (tapahtuu kaikki havainnot taulukossa)
+			-kaikkien havaintojen poistaminen (localStoragen tyhjäys)
+    date: 6.3.2018
+    auth: Maarit Parkkonen-->
+<html lang="fi">
+<head>
+  <title>ot4</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container"> 
+
+<h2>Lintubongari</h2>
+
+<!--PÄÄNÄYTTÖ**********************************************************************************************-->
+
+<div id="painikkeet">
+	<button type="button" class="btn btn-primary" id="uusi">Lisää uusi</button>
+	<button type="button" class="btn btn-success" id="hae">Hae havaintoja</button>
+	<button type="button" class="btn btn-info" id="tulosta">Tulosta kaikki</button>
+	<button type="button" class="btn btn-warning" id="tyhjenna">Poista kaikki</button>
+</div>
+
+<!--UUSI HAVAINTO LOMAKE************************************************************************************-->
+
+<div id="osaUusi">
+  <h3>Uusi havainto</h3>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-1" for="laji">Laji:</label>
+      <div class="col-sm-11">
+        <input type="text" class="form-control" id="laji" placeholder="Lajinimi.." name="laji">
+      </div>
+    </div>
+	
+    <div class="form-group">
+      <label class="control-label col-sm-1" for="kpl">Kpl:</label>
+      <div class="col-sm-11">          
+        <input type="text" class="form-control" id="kpl" placeholder="Kappalemäärä.." name="kpl">
+      </div>
+    </div>
+	
+    <div class="form-group">
+      <label class="control-label col-sm-1" for="pvm">Päiväys:</label>
+      <div class="col-sm-11">          
+		<p class="form-control-static" id="pvm"></p>
+      </div>
+    </div>
+	
+    <div class="form-group">
+      <label class="control-label col-sm-1" for="klo">Klo:</label>
+      <div class="col-sm-11">          
+		<p class="form-control-static" id="klo"></p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-1" for="paikka">Paikka:</label>
+      <div class="col-sm-11">          
+		<p class="form-control-static" id="paikka"></p>
+      </div>
+    </div>
+	
+    <div class="form-group">        
+      <div class="col-sm-offset-1 col-sm-11">
+        <button type="button" class="btn btn-default" id="tallenna">Tallenna</button>
+        <button type="button" class="btn btn-default peru">Peruuta</button>	
+      </div>
+    </div>
+  </form>
+</div>
+
+<!--HAKU LOMAKE**************************************************************************************************-->
+
+<div id="osaHae">
+  <h3>Hae havaintoja</h3>
+  
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-1" for="lajiHaku">Laji:</label>
+      <div class="col-sm-11">
+        <input type="text" class="form-control" id="lajiHaku" placeholder="Lajinimi.." name="lajiHaku">
+      </div>
+    </div>
+	
+    <div class="form-group">        
+      <div class="col-sm-offset-1 col-sm-11">
+        <button type="button" class="btn btn-default" id="teeHaku">Hae</button>
+		<button type="button" class="btn btn-default peru">Poistu</button>
+      </div>
+    </div>
+  </form>	  
+</div>
+
+<!--KAIKKIEN HAVAINTOJEN TULOSTUS********************************************************************************-->
+
+<div id="osaKaikki">
+  <h3>Kaikki havainnot</h3>     
+  <div class="table-responsive">
+	<table class="table table-striped" id="taulukko">
+	</table>
+  </div>
+   <button type="button" class="btn btn-default peru">Sulje</button>   
+</div>
+
+<!--TIETOVARASTON TYHJENTÄMISEN VARMISTAMINEN*********************************************************************-->
+
+<div id="osaTyhjenna">
+	<h3>Haluatko varmasti poistaa kaikki havainnot?</h3>
+	<button type="button" class="btn btn-primary peru">En</button>
+	<button type="button" class="btn btn-danger" id="poistaKaikki">Kyllä</button>
+</div>
+
+<!--TULOSTAMINEN (ei kaikki havainnot)*****************************************************************************-->
+
+<div id="tulostus"></div>
+
+</div><!--container-->
+
+<!--oman skriptitiedoston sijainti -->		
+<script src="ot4.js"></script> 
+</body>
+</html>

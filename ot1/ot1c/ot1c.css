@@ -1,0 +1,38 @@
+/* 	file: ot1c.css
+	desc: taustan, otsikoiden ja runokorttien tyylimääritykset
+	date: 28.1.2018
+	auth: Maarit Parkkonen */
+	
+body {
+	background-color: #d3faf6;
+}
+	
+.kortti {
+	width: 500px;
+	padding: 20px;
+	border: 1px solid blue;
+	background-color: #ffffff;
+	font-size: 20px;
+	 border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;	
+	 box-shadow: 5px 5px 5px #888888;	
+	 margin: auto;
+	 margin-bottom: 20px;
+}
+
+.otsikko .runo{
+	font-family: Arial;
+	color: white;
+}
+
+.otsikko{
+	font-size: 30px;
+	margin-left: 20px;	
+}
+
+.runo{
+	font-size: 20px;
+	margin-left: 50px;
+}
+

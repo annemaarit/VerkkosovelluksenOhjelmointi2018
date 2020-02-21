@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html> 
+<!--file: ot1d.html
+    desc: Valuuttalaskuri, joka muuttaa eurot dollareiksi tai
+		  dollarit euroiksi kiinteällä kurssilla
+    date: 29.1.2018
+    auth: Maarit Parkkonen-->
+	
+ <head>
+	<title> ot1d </title> 
+	<meta charset="utf-8"/> 
+	<!--tyylitiedoston sijainti-->
+	<link rel="stylesheet" href="ot1d.css">
+	<!--jquery kirjaston lataus-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ </head> 
+
+ <body> 
+	<fieldset> 
+		<legend>Valuuttalaskuri</legend>
+		<p>
+			<!--tietojen syöttö ja valinta-->
+			<label>Summa:</label><input id="summa"><br>
+			<label>Valuutta:</label>
+			EUR<input class="valuutta" type="radio" name="val" value="dollareiksi" checked="checked">
+			USD<input class="valuutta" type="radio" name="val" value="euroiksi">
+			<!--laskentapainike-->
+			<button id="laske"></button>
+			<!--tuloksen tulostusalue-->
+			<div id="tulostus"></div>	
+		</p>
+	</fieldset>
+	
+	<!--oman skriptitiedoston sijainti -->		
+	<script src="ot1d.js"></script> 
+ </body>
+
+</html>

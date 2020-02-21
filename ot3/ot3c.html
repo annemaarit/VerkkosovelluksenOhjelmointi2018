@@ -1,0 +1,31 @@
+<!DOCTYPE html> 
+<html> 
+<!--file: ot3c.html
+    desc: Toimii html -pohjana javascript -tiedostolle, 
+		  joka muodostaa Tuotteet -taulukon palvelimella 
+		  sijaitsevasta json -tiedostosta.
+		  Hakee tuotteen nimellä hinnan taulukosta.
+    date: 22.2.2018
+    auth: Maarit Parkkonen-->
+	
+ <head>
+	<title> ot3c </title> 
+	<meta charset="utf-8"/> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--tyylitiedoston sijainti-->
+	<link rel="stylesheet" href="ot3c.css">
+	<!--jquery kirjaston lataus-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ </head> 
+
+ <body> 
+	<div id="tulostus"></div>
+	<label>Kirjoita tuotteen nimi:</label>
+	<input type="text" id="syote">
+	<button id="hae">Hae hinta</button>
+	<div id="tulos"></div>
+	<!--oman skriptitiedoston sijainti -->		
+	<script src="ot3c.js"></script> 
+ </body>
+
+</html>

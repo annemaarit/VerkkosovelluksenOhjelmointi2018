@@ -1,0 +1,9 @@
+/* 	file: ot6b.css
+	desc: tiedoston ot6b (autovuokraus) tyylimääritykset,
+		  lomakkeen elementtien muotoiluja
+	date: 12.3.2018
+	auth: Maarit Parkkonen */
+
+input {max-width:600px;}
+
+button {margin-bottom:10px;}
